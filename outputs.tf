@@ -1,3 +1,7 @@
+output "api_management_workspace_certificates_id" {
+  description = "Map of id values across all api_management_workspace_certificates, keyed the same as var.api_management_workspace_certificates"
+  value       = { for k, v in azurerm_api_management_workspace_certificate.api_management_workspace_certificates : k => v.id }
+}
 output "api_management_workspace_certificates_api_management_workspace_id" {
   description = "Map of api_management_workspace_id values across all api_management_workspace_certificates, keyed the same as var.api_management_workspace_certificates"
   value       = { for k, v in azurerm_api_management_workspace_certificate.api_management_workspace_certificates : k => v.api_management_workspace_id }
